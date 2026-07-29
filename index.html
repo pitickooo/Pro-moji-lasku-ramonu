@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,129 +11,751 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<style>
 
-<link rel="stylesheet" href="style.css">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+
+background:#050505;
+
+font-family:"Poppins",sans-serif;
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:100%;
+height:100%;
+
+background:
+radial-gradient(circle at top,#ff5ea833,transparent 35%),
+radial-gradient(circle at bottom,#ffd70015,transparent 35%);
+
+z-index:-2;
+
+}
+
+
+section{
+
+padding:100px 25px;
+
+}
+
+
+/* uvod */
+
+.intro{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:#050505;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:20;
+
+animation:hideIntro 3s forwards;
+
+}
+
+
+.intro h1{
+
+font-family:"Great Vibes",cursive;
+
+font-size:85px;
+
+color:#ff83cb;
+
+text-shadow:0 0 40px hotpink;
+
+}
+
+
+@keyframes hideIntro{
+
+0%{
+opacity:1;
+}
+
+75%{
+opacity:1;
+}
+
+100%{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+}
+
+
+
+/* srdicka */
+
+.heart{
+
+position:fixed;
+
+top:-10px;
+
+animation:fall linear infinite;
+
+z-index:-1;
+
+}
+
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(-10vh) rotate(0deg);
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(360deg);
+
+}
+
+}
+
+
+
+/* vybuch */
+
+.burst{
+
+position:fixed;
+
+font-size:30px;
+
+pointer-events:none;
+
+animation:burst 1.5s forwards;
+
+z-index:10;
+
+}
+
+
+@keyframes burst{
+
+0%{
+
+transform:translate(0,0) scale(1);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translate(var(--x),var(--y)) scale(0);
+
+opacity:0;
+
+}
+
+}
+
+
+
+/* hlavni cast */
+
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+}
+
+
+.hero h1{
+
+font-family:"Great Vibes",cursive;
+
+font-size:90px;
+
+text-shadow:0 0 30px hotpink;
+
+}
+
+
+.hero p{
+
+margin-top:25px;
+
+font-size:22px;
+
+color:#ffd7ea;
+
+max-width:750px;
+
+line-height:1.8;
+
+}
+
+
+
+.btn{
+
+margin-top:40px;
+
+display:inline-block;
+
+padding:18px 45px;
+
+border-radius:999px;
+
+background:linear-gradient(135deg,#ff4fa2,#ff83cb);
+
+color:white;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+
+
+.btn:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 35px hotpink;
+
+}
+
+
+
+.box{
+
+max-width:950px;
+
+margin:auto;
+
+background:rgba(255,255,255,.06);
+
+padding:45px;
+
+border-radius:30px;
+
+backdrop-filter:blur(15px);
+
+line-height:2;
+
+font-size:21px;
+
+box-shadow:0 0 40px rgba(255,105,180,.15);
+
+}
+
+
+h2{
+
+text-align:center;
+
+font-size:45px;
+
+margin-bottom:40px;
+
+}
+
+
+/* pocitadlo */
+
+
+.counter{
+
+text-align:center;
+
+font-size:28px;
+
+color:#ffd7ea;
+
+}
+
+
+.counter span{
+
+color:#ff83cb;
+
+font-weight:bold;
+
+}
+
+
+/* tajne srdce */
+
+
+.secret-heart{
+
+position:fixed;
+
+bottom:30px;
+
+right:30px;
+
+font-size:45px;
+
+cursor:pointer;
+
+animation:pulse 1.5s infinite;
+
+z-index:5;
+
+}
+
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+}
+
+
+.secret-box{
+
+display:none;
+
+max-width:800px;
+
+margin:50px auto;
+
+padding:40px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:30px;
+
+text-align:center;
+
+font-size:22px;
+
+line-height:2;
+
+box-shadow:0 0 40px hotpink;
+
+}
+
+
+</style>
+
 </head>
+
 
 <body>
 
-<div id="loading">
 
-<div class="heart-loader">
+<div class="intro">
+
+<h1>Pro Ramonu ❤️</h1>
+
+</div>
+
+
+<div class="secret-heart" onclick="openSecret()">
+
 ❤️
-</div>
-
-<h1>Jen pro tebe Ramona</h1>
-
-<p>Klikni na srdíčko a otevři svoje překvapení</p>
-
-<button id="openBtn">
-Otevřít ❤️
-</button>
 
 </div>
 
-<div id="main">
+
+<script>
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*5+5)+"s";
+
+heart.style.fontSize=(Math.random()*20+15)+"px";
+
+
+document.body.appendChild(heart);
+
+
+setTimeout(()=>{
+
+heart.remove();
+
+},10000);
+
+}
+
+
+setInterval(createHeart,400);
+
+
+</script>
+
 
 <section class="hero">
 
-<div class="overlay"></div>
 
-<div class="hero-content">
+<div>
 
-<h1 class="title">
-Ramona ❤️
-</h1>
 
-<p class="subtitle">
-Tohle jsem vytvořil jen pro tebe...
-</p>
+<h1>Ramona ❤️</h1>
 
-<button id="musicBtn">
-<i class="fa-solid fa-play"></i>
-Přehrát naši písničku
-</button>
-
-</div>
-
-</section>
-
-<section class="gallery" data-aos="fade-up">
-
-<h2>Naše vzpomínky 📸</h2>
-
-<div class="gallery-grid">
-
-<img src="images/foto1.jpg">
-
-<img src="images/foto2.jpg">
-
-<img src="images/foto3.jpg">
-
-</div>
-
-</section>
-
-<section class="letter" data-aos="fade-up">
-
-<h2>Dopis pro tebe ❤️</h2>
-
-<div class="letter-box">
-
-<p id="typing">
-
-SEM POZDĚJI VLOŽÍME TVŮJ DOPIS
-
-</p>
-
-</div>
-
-</section>
-
-<section class="counter" data-aos="zoom-in">
-
-<h2>Jak dlouho jsme spolu ❤️</h2>
-
-<div id="countup">
-
-0 dní
-
-</div>
-
-</section>
-
-<section class="end">
-
-<h1>
-
-Doufám že spolu budeme navždy ❤️
-
-</h1>
 
 <p>
 
-Protože tě miluju celým svým srdíčkem a vždycky milovat budu.
+Tohle není jen obyčejná stránka...
+
+Je to něco co jsem vytvořil jen pro tebe.
+
+Něco co patří jen tobě.
 
 </p>
 
-</section>
+
+<a href="#dopis" class="btn">
+
+Otevřít překvapení ❤️
+
+</a>
+
 
 </div>
 
-<audio id="music">
 
-<source src="music/forever-ever.mp3" type="audio/mpeg">
+</section>
+<section>
 
-</audio>
+<h2>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+Náš společný čas ❤️
 
-<script src="script.js"></script>
+</h2>
+
+
+<div class="box counter">
+
+Jsme spolu už:
+
+<br><br>
+
+<span id="days">0</span> dní ❤️
+
+<br>
+
+<span id="hours">0</span> hodin ❤️
+<br>
+<span id="minutes">0</span> minut ❤️
+<br>
+<span id="seconds">0</span> sekund ❤️
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section>
+
+
+<h2>
+
+Proč jsi pro mě výjimečná ❤️
+
+</h2>
+
+
+<div class="box">
+
+
+<p>
+
+Nejhezčí věci v životě nejsou věci...
+
+Jsou to lidé kteří nám dokážou udělat život krásnější.
+
+A ty jsi pro mě přesně takový člověk.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+Děkuju ti za každý úsměv za každý společný moment a za všechno co spolu prožíváme.
+
+Jsem šťastný že tě mám.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section id="dopis">
+
+
+<h2>
+
+Dopis pro tebe ❤️
+
+</h2>
+
+
+<div class="box">
+
+
+<p>
+
+Nevím jak začít protože žádná slova nikdy nebudou dost dobrá na to aby popsala jak moc pro mě důležitá jsi lásko moje...
+
+</p>
+
+
+<br>
+
+
+<p>
+
+Chci aby sis vždy pamatovala že jsi pro mě někdo opravdu speciální.
+
+Děkuju že jsi součást mého života.
+
+Doufám že spolu vytvoříme ještě spoustu krásných vzpomínek.
+
+Mám tě rád ❤️
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<div id="secret" class="secret-box">
+
+
+<h2>
+
+Tajná zpráva jen pro tebe ❤️
+
+</h2>
+
+
+<p>
+
+Ramono ❤️
+
+jestli jsi našla tohle malé překvapení tak chci aby sis zapamatovala jednu věc.
+
+Jsi pro mě někdo opravdu výjimečný.
+
+Děkuju ti za každý úsměv za každý společný moment a za to že jsi součást mého života.
+
+Nikdy nezapomeň že pro mě znamenáš hodně.
+
+❤️
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+function openSecret(){
+
+
+let secret=document.getElementById("secret");
+
+
+secret.style.display="block";
+
+
+secret.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
+
+for(let i=0;i<40;i++){
+
+
+let heart=document.createElement("div");
+
+
+heart.className="burst";
+
+
+heart.innerHTML="❤️";
+
+
+heart.style.left="50%";
+
+heart.style.top="50%";
+
+
+heart.style.setProperty("--x",(Math.random()*600-300)+"px");
+
+heart.style.setProperty("--y",(Math.random()*600-300)+"px");
+
+
+document.body.appendChild(heart);
+
+
+
+setTimeout(()=>{
+
+heart.remove();
+
+},1500);
+
+
+}
+
+
+}
+
+
+
+
+
+const startDate = new Date("2025-08-07T00:00:00");
+
+
+
+function updateCounter(){
+
+
+const now = new Date();
+
+
+const difference = now - startDate;
+
+
+
+const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+
+const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+
+
+const minutes = Math.floor((difference / (1000 * 60)) % 60);
+
+
+const seconds = Math.floor((difference / 1000) % 60);
+
+
+
+document.getElementById("days").innerHTML = days;
+
+
+document.getElementById("hours").innerHTML = hours;
+
+
+document.getElementById("minutes").innerHTML = minutes;
+
+
+document.getElementById("seconds").innerHTML = seconds;
+
+
+}
+
+
+
+setInterval(updateCounter,1000);
+
+
+updateCounter();
+
+
+
+</script>
+
+
 
 </body>
+
 </html>
