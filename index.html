@@ -3,113 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Pro moji Ramonu ❤️</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:linear-gradient(135deg,#ff5fa2,#ffd6ea,#fff);
-background-size:400% 400%;
-animation:bg 10s infinite alternate;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-overflow:hidden;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
-@keyframes bg{
-0%{background-position:left;}
-100%{background-position:right;}
-}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-.card{
-width:90%;
-max-width:850px;
-background:white;
-padding:40px;
-border-radius:30px;
-box-shadow:0 0 35px rgba(0,0,0,.25);
-text-align:center;
-position:relative;
-z-index:2;
-}
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-h1{
-color:#ff2d75;
-font-size:42px;
-margin-bottom:20px;
-}
-
-p{
-font-size:22px;
-line-height:1.9;
-color:#444;
-}
-
-.heart{
-font-size:70px;
-animation:beat 1s infinite;
-margin-bottom:15px;
-}
-
-@keyframes beat{
-0%,100%{transform:scale(1);}
-50%{transform:scale(1.2);}
-}
-
-.floating{
-position:absolute;
-color:#ff4d88;
-animation:float 10s linear infinite;
-opacity:.7;
-}
-
-@keyframes float{
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
-20%{
-opacity:1;
-}
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="floating" style="left:10%;font-size:40px;animation-delay:0s;">❤️</div>
-<div class="floating" style="left:25%;font-size:25px;animation-delay:2s;">💕</div>
-<div class="floating" style="left:50%;font-size:35px;animation-delay:5s;">❤️</div>
-<div class="floating" style="left:70%;font-size:28px;animation-delay:1s;">💖</div>
-<div class="floating" style="left:90%;font-size:45px;animation-delay:3s;">❤️</div>
+<div id="loading">
 
-<div class="card">
+<div class="heart-loader">
+❤️
+</div>
 
-<div class="heart">❤️</div>
+<h1>Jen pro tebe Ramona</h1>
 
-<h1>Pro moji nejkrásnější Ramonu</h1>
+<p>Klikni na srdíčko a otevři svoje překvapení</p>
 
-<p>
+<button id="openBtn">
+Otevřít ❤️
+</button>
 
-Dnes je Den přítelkyň a chtěl jsem ti napsat něco přímo od srdicka Chtěl bych aby jsi věděla že jsi pro mě ten nejdůležitější člověk na celém světě Opravdu si neumím představit život bez tebe Od té doby co tě znám jsi mi úplně změnila život Díky tobě se každý den usmívám víc a nikdy jsem nebyl tak šťastnej jako jsem s tebou Vím že nejsem dokonalý a že jsem udělal hodne chyb Mrzí mě každá chvíle kdy jsem tě zklamal nebo ti ublížil Nikdy jsem ti nechtěl udelat smutek Jen chci aby jsi věděla že se opravdu snažím být lepším klukem protože mi na tobě záleží víc než na čemkoliv jiném Jsi ta nejkrásnější holka jakou znám Miluju tvůj úsměv tvoje oči tvůj hlas i to jak se směješ Miluju úplně všechno co k tobě patří At jsi stastna nebo smutná pro mě budeš vždycky ta nejkrásnější holka na světě Na světě je hodně holek které se jmenují Ramona a i těch které se tak nejmenují ale žádná z nich na tu moji nemá Pro mě jsi jen jedna a vždycky budeš ta nejlepší Nikdy bych tě za nikoho nevyměnil Děkuji ti za všechny krásné veci které jsme spolu zažili Děkuji ti za každý den kdy jsi se mnou za každou zprávu za každý volani za každou pusu i za každou maličkost kterou pro mě uděláš Možná si ani neuvědomuješ jak moc pro mě znamenáš Chci být člověk vedle kterého se budeš cítit šťastná a v bezpečí Chci být ten komu budeš moct vždycky věřit a na koho se budeš moct spolehnout Budu se snažit být pro tebe každý den lepší než ten před nim Ať se mezi námi někdy stane cokoliv nikdy nepřestanu bojovat za nás Protože naše láska pro mě znamená úplně všechno Nechci o tebe přijít Chci aby jsme spolu zažili ještě spoustu krásných veci mazleni srandy  a vzpomínek na které nikdy nezapomeneme Možná nejsem nejlepší kluk na světě ale jedno vím jistě Miluju tě celým svým srdickem a nikdy nepřestanu Každý den jsem vděčnej že tě mám a každý den si uvědomuju jaky mám štěstí že právě ty jsi moje holka Doufám že spolu budeme ještě hodně dlouho a že jednou budeme vzpomínat na všechny tyhle chvílky s úsměvem Protože ty jsi moje štěstíčko moje láska moje princezna moje nejoblíbenější holka a moje všechno Miluji tě víc než dokážou popsat vsechny slova ❤️
+</div>
+
+<div id="main">
+
+<section class="hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1 class="title">
+Ramona ❤️
+</h1>
+
+<p class="subtitle">
+Tohle jsem vytvořil jen pro tebe...
+</p>
+
+<button id="musicBtn">
+<i class="fa-solid fa-play"></i>
+Přehrát naši písničku
+</button>
+
+</div>
+
+</section>
+
+<section class="gallery" data-aos="fade-up">
+
+<h2>Naše vzpomínky 📸</h2>
+
+<div class="gallery-grid">
+
+<img src="images/foto1.jpg">
+
+<img src="images/foto2.jpg">
+
+<img src="images/foto3.jpg">
+
+</div>
+
+</section>
+
+<section class="letter" data-aos="fade-up">
+
+<h2>Dopis pro tebe ❤️</h2>
+
+<div class="letter-box">
+
+<p id="typing">
+
+SEM POZDĚJI VLOŽÍME TVŮJ DOPIS
 
 </p>
 
-<div class="heart">❤️</div>
+</div>
+
+</section>
+
+<section class="counter" data-aos="zoom-in">
+
+<h2>Jak dlouho jsme spolu ❤️</h2>
+
+<div id="countup">
+
+0 dní
 
 </div>
+
+</section>
+
+<section class="end">
+
+<h1>
+
+Doufám že spolu budeme navždy ❤️
+
+</h1>
+
+<p>
+
+Protože tě miluju celým svým srdíčkem a vždycky milovat budu.
+
+</p>
+
+</section>
+
+</div>
+
+<audio id="music">
+
+<source src="music/forever-ever.mp3" type="audio/mpeg">
+
+</audio>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script src="script.js"></script>
 
 </body>
 </html>
